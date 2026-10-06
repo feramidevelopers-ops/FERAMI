@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FERAMI DEVELOPERS - Diseño Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        ferami: {
+                            blue: '#1e3a8a', // Dark blue
+                            light: '#3b82f6', // Standard blue
+                            orange: '#f97316', // Action orange
+                            dark: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for subtle animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-slate-50 antialiased selection:bg-ferami-orange selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logoferami.jpg" alt="Ferami Developers Logo" class="h-12 w-auto object-contain rounded-lg shadow-sm" onerror="this.src='https://placehold.co/150x50/1e3a8a/ffffff?text=FERAMI'">
+                    <span class="font-bold text-xl text-ferami-blue tracking-tight hidden sm:block">FERAMI<br><span class="text-sm font-medium text-slate-500">DEVELOPERS</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-slate-600 hover:text-ferami-blue font-medium transition-colors">Inicio</a>
+                    <a href="#solucion" class="text-slate-600 hover:text-ferami-blue font-medium transition-colors">Solución</a>
+                    <a href="#planes" class="text-slate-600 hover:text-ferami-blue font-medium transition-colors">Planes</a>
+                    <a href="#proceso" class="text-slate-600 hover:text-ferami-blue font-medium transition-colors">Proceso</a>
+                    <a href="#contacto" class="bg-ferami-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contactar</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-ferami-blue focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#inicio" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-ferami-blue rounded-md">Inicio</a>
+                <a href="#solucion" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-ferami-blue rounded-md">Solución</a>
+                <a href="#planes" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-ferami-blue rounded-md">Planes</a>
+                <a href="#proceso" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-ferami-blue rounded-md">Proceso</a>
+                <a href="#contacto" class="block px-3 py-3 text-base font-bold text-ferami-orange hover:bg-slate-50 rounded-md">Contactar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-slate-100 opacity-90"></div>
+            <!-- Decorative background elements -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-ferami-light opacity-10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-ferami-orange opacity-10 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto fade-in-up">
+                <span class="text-ferami-orange font-bold tracking-wider uppercase text-sm mb-4 block">Diseño Web para Comercios y Servicios</span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ferami-dark tracking-tight leading-tight mb-6">
+                    Tu negocio, <br class="hidden sm:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-ferami-blue to-ferami-light">claro y conectado.</span>
+                </h1>
+                <p class="mt-4 text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+                    Diseño, desarrollo y acompañamiento para dar el siguiente paso en internet. Complementa tus redes sociales y facilita la atención por WhatsApp.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#planes" class="bg-ferami-blue hover:bg-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Ver Planes
+                    </a>
+                    <a href="#contacto" class="bg-white hover:bg-slate-50 text-ferami-blue border-2 border-ferami-blue px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-sm hover:shadow">
+                        Agendar Demostración
+                    </a>
+                </div>
+                <p class="mt-6 text-sm text-slate-500 font-medium">
+                    <i class="fas fa-map-marker-alt text-ferami-orange mr-1"></i> León, Guanajuato · Atención presencial y a distancia
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem / Starting Point -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold text-ferami-dark mb-4">¿Qué le preguntan una y otra vez?</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Primero entendemos el negocio; después proponemos una solución. Las preguntas repetidas consumen tiempo antes de llegar a una compra.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow fade-in-up delay-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-ferami-blue text-2xl">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ferami-dark mb-3">01 / Información</h3>
+                    <p class="text-slate-600 italic mb-2">"¿Qué modelos tiene?"</p>
+                    <p class="text-slate-600 text-sm">Fotos, características y precios suelen estar repartidos entre publicaciones antiguas y conversaciones largas.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow fade-in-up delay-200">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 text-ferami-orange text-2xl">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ferami-dark mb-3">02 / Confianza</h3>
+                    <p class="text-slate-600 italic mb-2">"¿Dónde los encuentro?"</p>
+                    <p class="text-slate-600 text-sm">Horarios, ubicación exacta y formas de contacto oficiales que deben ser fáciles de consultar para generar seguridad.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow fade-in-up delay-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-ferami-blue text-2xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ferami-dark mb-3">03 / Atención</h3>
+                    <p class="text-slate-600 italic mb-2">"¿Me manda los detalles?"</p>
+                    <p class="text-slate-600 text-sm">El cliente necesita una consulta más concreta. La página lo prepara para llegar a WhatsApp sabiendo qué le interesa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution / Proposal -->
+    <section id="solucion" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-ferami-blue opacity-50 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 -left-20 w-72 h-72 bg-ferami-orange opacity-20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-ferami-orange font-bold tracking-wider uppercase text-sm mb-4 block">Nuestra Propuesta</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Un punto de consulta para su negocio</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">Una web facilita la consulta. Organizamos su información para que sus clientes encuentren lo que buscan rápidamente y le contacten con intención de compra.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-700">
+                        <i class="fas fa-paint-brush text-3xl text-ferami-light"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Presentar</h3>
+                    <p class="text-slate-400">Una imagen coherente. Diseño con su identidad corporativa y una explicación clara y profesional de lo que ofrece su negocio.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-700">
+                        <i class="fas fa-layer-group text-3xl text-ferami-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Organizar</h3>
+                    <p class="text-slate-400">Información fácil de encontrar. Productos o servicios, detalles técnicos y datos de contacto estructurados en un mismo lugar.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-6 border border-slate-700">
+                        <i class="fas fa-link text-3xl text-ferami-light"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Conectar</h3>
+                    <p class="text-slate-400">Una consulta más concreta. El visitante llega a su WhatsApp conociendo el catálogo, listo para acordar disponibilidad, pago y entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section id="planes" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-ferami-blue font-bold tracking-wider uppercase text-sm mb-4 block">Inversión</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-ferami-dark mb-4">Elija el nivel de acompañamiento</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Precios base en MXN. El alcance y el importe final se confirman por escrito mediante una cotización personalizada a sus necesidades.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Plan 01 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all relative flex flex-col h-full">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-ferami-dark mb-2">Plan 01: Esencial</h3>
+                        <p class="text-slate-500 min-h-[48px]">Para presentar su negocio y facilitar el contacto rápido desde el celular.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-sm text-slate-500 font-medium">Desde</span>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold text-ferami-blue">$4,999</span>
+                            <span class="text-slate-500 font-medium">MXN</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Pago único por creación</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-slate-600">Creación de una página con hasta <strong>cinco secciones</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-slate-600">Diseño y programación adaptables al <strong>celular (Responsive)</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-slate-600"><strong>Catálogo</strong> de hasta veinte productos bien presentados (si aplica).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-slate-600">Botón de contacto directo por <strong>WhatsApp</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-slate-600"><strong>Dos rondas</strong> de ajustes antes de publicar.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-slate-600"><strong>Dominio estándar</strong> del primer año incluido*.</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full block text-center bg-slate-100 hover:bg-slate-200 text-ferami-blue font-bold py-3 px-4 rounded-xl transition-colors">Solicitar Cotización</a>
+                </div>
+
+                <!-- Plan 02 -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-ferami-blue shadow-lg hover:shadow-xl transition-all relative flex flex-col h-full transform md:-translate-y-4">
+                    <!-- Ribbon -->
+                    <div class="absolute top-0 right-0 bg-ferami-orange text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">
+                        Recomendado
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-ferami-dark mb-2">Plan 02: Creación + Mantenimiento</h3>
+                        <p class="text-slate-500 min-h-[48px]">Para contar con un sitio siempre al día y revisiones programadas por un año.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-sm text-slate-500 font-medium">Desde</span>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold text-ferami-blue">$8,999</span>
+                            <span class="text-slate-500 font-medium">MXN</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Total del primer año</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-ferami-orange mt-1 mr-3"></i>
+                            <span class="text-slate-800 font-medium"><strong>Incluye todo lo del Plan 01 (Esencial)</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-ferami-blue mt-1 mr-3"></i>
+                            <span class="text-slate-600"><strong>4 revisiones trimestrales</strong> (Mes 3, 6, 9 y 12).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-ferami-blue mt-1 mr-3"></i>
+                            <span class="text-slate-600">Hasta <strong>12 horas máximo</strong> de mantenimiento anual.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-ferami-blue mt-1 mr-3"></i>
+                            <span class="text-slate-600">Revisión de enlaces, botones, visualización móvil y ajustes menores.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-ferami-blue mt-1 mr-3"></i>
+                            <span class="text-slate-600">Soporte y cuidado técnico (HTTPS, actualizaciones preventivas).</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full block text-center bg-ferami-blue hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-md">Elegir este Plan</a>
+                </div>
+
+            </div>
+            <p class="text-center text-xs text-slate-400 mt-8 max-w-3xl mx-auto">
+                *Extensión de dominio estándar e importe incluidos por definir en la cotización. Alojamiento (hosting), funciones nuevas (ecommerce, inventario, APIs) y renovación anual se especifican aparte.
+            </p>
+        </div>
+    </section>
+
+    <!-- How we work -->
+    <section id="proceso" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-ferami-dark mb-4">Forma de Trabajo</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Un proceso sencillo, con puntos de revisión. Definimos el alcance y hacemos acuerdos por escrito antes de comenzar a programar.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-ferami-blue rounded-full flex items-center justify-center text-xl font-bold mb-4 border-2 border-blue-100">01</div>
+                    <h4 class="font-bold text-ferami-dark mb-2">Conocer</h4>
+                    <p class="text-sm text-slate-500">Objetivo de su negocio, público ideal y contenido necesario.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-ferami-blue rounded-full flex items-center justify-center text-xl font-bold mb-4 border-2 border-blue-100">02</div>
+                    <h4 class="font-bold text-ferami-dark mb-2">Cotizar</h4>
+                    <p class="text-sm text-slate-500">Definimos alcance detallado, fechas de entrega y esquema de pagos.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-ferami-blue rounded-full flex items-center justify-center text-xl font-bold mb-4 border-2 border-blue-100">03</div>
+                    <h4 class="font-bold text-ferami-dark mb-2">Construir</h4>
+                    <p class="text-sm text-slate-500">Diseño de interfaz y programación de la versión funcional inicial.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-ferami-blue rounded-full flex items-center justify-center text-xl font-bold mb-4 border-2 border-blue-100">04</div>
+                    <h4 class="font-bold text-ferami-dark mb-2">Revisar</h4>
+                    <p class="text-sm text-slate-500">Hasta dos rondas de ajustes (textos, colores, distribución).</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="text-center col-span-2 md:col-span-1">
+                    <div class="w-16 h-16 mx-auto bg-ferami-orange text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 shadow-md">05</div>
+                    <h4 class="font-bold text-ferami-dark mb-2">Entregar</h4>
+                    <p class="text-sm text-slate-500">Pruebas en móviles, publicación oficial y entrega de accesos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contacto" class="py-20 bg-ferami-blue">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Siguiente Paso: Conozcamos su negocio</h2>
+            <p class="text-xl text-blue-100 mb-10">
+                ¿Qué le gustaría que sus clientes pudieran consultar sin tener que preguntárselo cada vez? Agende una conversación breve para descubrir si esta solución le sirve.
+            </p>
+            
+            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-xl max-w-2xl mx-auto text-left">
+                <h3 class="text-2xl font-bold text-ferami-dark mb-6 text-center">Agendar Demostración Breve</h3>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-orange-100 text-ferami-orange rounded-full flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg text-ferami-dark">Presencial</h4>
+                            <p class="text-slate-600">En León, Guanajuato. Los días sábados, con cita previa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 text-ferami-blue rounded-full flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg text-ferami-dark">A distancia</h4>
+                            <p class="text-slate-600">Videollamada en un horario acordado entre semana.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <a href="https://wa.me/5211234567890?text=Hola,%20me%20interesa%20agendar%20una%20demostración%20para%20una%20página%20web" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                        <i class="fab fa-whatsapp text-2xl mr-2"></i> Contactar por WhatsApp
+                    </a>
+                    <p class="text-xs text-slate-400 mt-4">*El enlace abrirá un chat directo con nuestro equipo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <!-- Small logo in footer -->
+                <img src="logoferami.jpg" alt="Ferami" class="h-8 w-auto rounded opacity-80" onerror="this.src='https://placehold.co/50x50/1e3a8a/ffffff?text=F'">
+                <span class="font-bold text-white tracking-tight">FERAMI <span class="font-normal text-slate-400">DEVELOPERS</span></span>
+            </div>
+            
+            <div class="text-center md:text-right text-sm">
+                <p>&copy; 2026 FERAMI Developers. León, Guanajuato.</p>
+                <p class="mt-1">Diseño web para comercios y servicios.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
